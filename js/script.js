@@ -30,11 +30,22 @@ var op4=document.getElementById('op4');
             op3.innerHTML=this.questions[this.index].options[2];
             op4.innerHTML=this.questions[this.index].options[3];
 
+        },
+        check:function(ele){
+
+            var id=ele.id.split('');
+            console.log(id);
+
+            if(id[id.length-1]==this.questions[this.index].answer){
+                console.log("Correct")
+            }
+            else{
+                console.log("Incorrect")
+            }
         }
     }
 
     window.onload=app.load();
     function button(ele){
-        alert(ele.id);
+        app.check(ele);
     }
-
