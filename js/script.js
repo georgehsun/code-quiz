@@ -91,3 +91,35 @@
 
 
 
+
+         var count = 30;
+         var interval = setInterval(function(){
+           document.getElementById('count').innerHTML=count;
+           count--;
+           if (count === 0){
+             clearInterval(interval);
+             document.getElementById('count').innerHTML='Done';
+             // or...
+             alert("You're out of time!");
+           }
+         }, 1000);
+
+
+function waitForDOM(){
+   //if the list of pages is grather than 0 then
+//add the new tab here and create the event listener
+gBrowser.addEventListener('DOMContentLoaded',pageLoaded,true);
+}
+
+
+         var score = 0;
+var highscore = localStorage.getItem("highscore");
+
+if(highscore !== null){
+    if (score > highscore) {
+        localStorage.setItem("highscore", score);      
+    }
+}
+else{
+    localStorage.setItem("highscore", score);
+}
